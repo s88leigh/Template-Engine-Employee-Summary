@@ -25,10 +25,10 @@ function generateHTML(data) {
                     html, body, .wrapper {
                     height: 100%;
                     }
-                    .wrapper {
-                    background-color: ${colors[data.color].wrapperBackground};
-                    padding-top: 100px;
-                    }
+                    // .wrapper {
+                    // background-color: ${colors[data.color].wrapperBackground};
+                    // padding-top: 100px;
+                    // }
                     body {
                     background-color: white;
                     -webkit-print-color-adjust: exact !important;
@@ -42,19 +42,19 @@ function generateHTML(data) {
                     </div>
                     <div class="card-body">
                       <!-- <h5 class="card-title">Special title treatment</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                      
                       <div class="row row-cols-1 row-cols-md-3">
                         <div class="col mb-4">
                           <div class="card">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
-                              <h5 class="card-title">Card title</h5>
+                              <h5 class="card-title">${data.name}</h5>
+                              <h5 class="card-title">Manager</h5>
                               <div class="card" style="width: 18rem;">
                                 <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">Cras justo odio</li>
-                                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                                  <li class="list-group-item">Vestibulum at eros</li>
+                                  <li class="list-group-item">${data.id}</li>
+                                  <li class="list-group-item">${data.Email}</li>
+                                  <li class="list-group-item">${data.Office_number}</li>
                                 </ul>
                               </div>
                               <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
