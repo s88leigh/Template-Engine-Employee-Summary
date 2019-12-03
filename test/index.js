@@ -23,14 +23,21 @@ const questions = [
   {
     type: "list",
     name: "job title",
-    message: "What is your job title?",
+    message: "What is your current role in this company?",
     choices: ["manager", "engineer", "intern"]
   },
   {
     type: "input",
     name: "name",
-    message: "What is your Github username?"
+    message: "If you have a Github account, Enter your Github username?"
   },
+  {
+    type: "list",
+    name: "school",
+    message: "Which school did you attend?",  
+    choices: ["UCLA", "Boston U", "UNH"]
+  },
+
   
 ];
 
