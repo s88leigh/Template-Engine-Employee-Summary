@@ -15,7 +15,7 @@ return `< !DOCTYPE html>
         <title>Document</title>
 
         <style>
-
+            .card-header {background-color:rgb(198, 214, 250)}
         </style>
     </head>
 
@@ -28,15 +28,7 @@ return `< !DOCTYPE html>
         html, body, .wrapper {
         height: 100%;
         }
-        // .wrapper {
-        // background-color: ${colors[data.color].wrapperBackground};
-        // padding-top: 100px;
-        // }
-        body {
-        background-color: white;
-        -webkit-print-color-adjust: exact !important;
-        font-family: 'Cabin', sans-serif;
-        }
+      
 
 
         <div class="card text-center">
@@ -55,9 +47,9 @@ return `< !DOCTYPE html>
                             <div class="card-body text-dark">
                                 <div class="card" style="width: 16rem;">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id}</li>
-                                        <li class="list-group-item">${data.Email}</li>
-                                        <li class="list-group-item">${data.Office_number}</li>
+                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -73,9 +65,9 @@ return `< !DOCTYPE html>
                             <div class="card-body text-dark">
                                 <div class="card" style="width: 16rem;">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id}</li>
-                                        <li class="list-group-item">${data.Email}</li>
-                                        <li class="list-group-item">${data.Office_number}</li>
+                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -91,9 +83,9 @@ return `< !DOCTYPE html>
                             <div class="card-body text-dark">
                                 <div class="card" style="width: 16rem;">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id}</li>
-                                        <li class="list-group-item">${data.Email}</li>
-                                        <li class="list-group-item">${data.Office_number}</li>
+                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -109,9 +101,9 @@ return `< !DOCTYPE html>
                             <div class="card-body text-dark">
                                 <div class="card" style="width: 16rem;">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id}</li>
-                                        <li class="list-group-item">${data.Email}</li>
-                                        <li class="list-group-item">${data.Office_number}</li>
+                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -127,9 +119,9 @@ return `< !DOCTYPE html>
                             <div class="card-body text-dark">
                                 <div class="card" style="width: 16rem;">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id}</li>
-                                        <li class="list-group-item">${data.Email}</li>
-                                        <li class="list-group-item">${data.Office_number}</li>
+                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
                                     </ul>
                                 </div>
                             </div>
