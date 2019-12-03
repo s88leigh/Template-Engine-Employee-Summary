@@ -23,133 +23,134 @@ return `< !DOCTYPE html>
                 box-shadow: 5px 10px lightgray;
             }
 
-            html,
-            body {
-                padding: 20px;
-                margin: 20px;
-            }
+            .card-columns {
+                @include media-breakpoint-only(lg) {
+                    column-count: 4;
+                }
 
-            html,
-            body,
-            .wrapper {
-                height: 100%;
-            }
+                html,
+                body {
+                    padding: 20px;
+                    margin: 20px;
+                }
+
+                html,
+                body,
+                .wrapper {
+                    height: 100%;
+                }
         </style>
     </head>
 
     <body>
 
-        html, body {
-        padding: 20px;
-        margin: 20px;
-        }
-        html, body, .wrapper {
-        height: 100%;
-        }
+        <div class="wrapper">
+            <div class="card text-center">
+                <div class="card-header card border-dark mb-4">
+                    <h5>My Team</h5>
+                </div>
+                <div class="card-body">
 
-
-
-        <div class="card text-center">
-            <div class="card-header card border-dark mb-4">
-                <h5>My Team</h5>
-            </div>
-            <div class="card-body">
-
-                <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col mb-4">
-                        <div class="card border-dark mb-4" style="width: 19rem;">
-                            <div class="card-header">
-                                <h5>${data.name ? data.name : ""}</h5>
-                                <h5><i class="fas fa-mug-hot"></i>Manager</h5>
-                            </div>
-                            <div class="card-body text-dark">
-                                <div class="card" style="width: 16rem;">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
-                                    </ul>
+                    <div class="row row-cols-1 row-cols-md-3">
+                        <div class="col mb-4">
+                            <div class="card border-dark mb-4" style="width: 19rem;">
+                                <div class="card-header">
+                                    <h5>${data.name ? data.name : ""}</h5>
+                                    <h5><i class="fas fa-mug-hot"></i>Manager</h5>
+                                </div>
+                                <div class="card-body text-dark">
+                                    <div class="card" style="width: 16rem;">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                            <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                            <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col mb-4">
-                        <div class="card border-dark mb-4" style="width: 19rem;">
-                            <div class="card-header">
-                                <h5>${data.name ? data.name : ""}</h5>
-                                <h5><i class="fas fa-glasses"></i>Engineer</h5>
-                            </div>
-                            <div class="card-body text-dark">
-                                <div class="card" style="width: 16rem;">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
-                                    </ul>
+                        <div class="col mb-4">
+                            <div class="card border-dark mb-4" style="width: 19rem;">
+                                <div class="card-header">
+                                    <h5>${data.name ? data.name : ""}</h5>
+                                    <h5><i class="fas fa-glasses"></i>Engineer</h5>
+                                </div>
+                                <div class="card-body text-dark">
+                                    <div class="card" style="width: 16rem;">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                            <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                            <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col mb-4">
-                        <div class="card border-dark mb-4" style="width: 19rem;">
-                            <div class="card-header">
-                                <h5>${data.name ? data.name : ""}</h5>
-                                <h5><i class="fas fa-glasses"></i>>Engineer</h5>
-                            </div>
-                            <div class="card-body text-dark">
-                                <div class="card" style="width: 16rem;">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
-                                    </ul>
+                        <div class="col mb-4">
+                            <div class="card border-dark mb-4" style="width: 19rem;">
+                                <div class="card-header">
+                                    <h5>${data.name ? data.name : ""}</h5>
+                                    <h5><i class="fas fa-glasses"></i>>Engineer</h5>
+                                </div>
+                                <div class="card-body text-dark">
+                                    <div class="card" style="width: 16rem;">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                            <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                            <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col mb-4">
-                        <div class="card border-dark mb-4" style="width: 19rem;">
-                            <div class="card-header">
-                                <h5>${data.name ? data.name : ""}</h5>
-                                <h5><i class="fas fa-glasses"></i>Engineer</h5>
-                            </div>
-                            <div class="card-body text-dark">
-                                <div class="card" style="width: 16rem;">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
-                                    </ul>
+                        <div class="col mb-4">
+                            <div class="card border-dark mb-4" style="width: 19rem;">
+                                <div class="card-header">
+                                    <h5>${data.name ? data.name : ""}</h5>
+                                    <h5><i class="fas fa-glasses"></i>Engineer</h5>
+                                </div>
+                                <div class="card-body text-dark">
+                                    <div class="card" style="width: 16rem;">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                            <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                            <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col mb-4">
-                        <div class="card border-dark mb-4" style="width: 19rem;">
-                            <div class="card-header">
-                                <h5>${data.name ? data.name : ""}</h5>
-                                <h5><i class="fas fa-user-graduate"></i>Intern</h5>
-                            </div>
-                            <div class="card-body text-dark">
-                                <div class="card" style="width: 16rem;">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                        <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                        <li class="list-group-item">${data.Office_number ? data.Office_number : ""}</li>
-                                    </ul>
+                        <div class="col mb-4">
+                            <div class="card border-dark mb-4" style="width: 19rem;">
+                                <div class="card-header">
+                                    <h5>${data.name ? data.name : ""}</h5>
+                                    <h5><i class="fas fa-user-graduate"></i>Intern</h5>
+                                </div>
+                                <div class="card-body text-dark">
+                                    <div class="card" style="width: 16rem;">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">${data.id ? data.id : ""}</li>
+                                            <li class="list-group-item">${data.Email ? data.Email : ""}</li>
+                                            <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
-
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>
