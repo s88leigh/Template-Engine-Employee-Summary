@@ -18,14 +18,20 @@ const questions = [
   {
     type: "input",
     name: "name",
-    message: "What is your Github username?"
+    message: "What is your name?"
   },
   {
     type: "list",
-    name: "color",
-    message: "What is your favorite color?",
-    choices: ["red", "blue", "green", "yellow", "purple"]
-  }
+    name: "job title",
+    message: "What is your job title?",
+    choices: ["manager", "engineer", "intern"]
+  },
+  {
+    type: "input",
+    name: "name",
+    message: "What is your Github username?"
+  },
+  
 ];
 
 const compile = async function (filename, data) {
