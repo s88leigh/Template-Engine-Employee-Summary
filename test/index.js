@@ -29,7 +29,7 @@ const questions = [
 ];
 
 const compile = async function (filename, data) {
-  const filePath = path.join(process.cwd(), "resume.pdf");
+  const filePath = path.join(process.cwd(), "myTeam.pdf");
   const html = await fs.readFile(filePath, 'utf-8');
 };
 
@@ -64,7 +64,7 @@ async function init() {
     // await page.emulateMedia("screen");
 
     // Generates a PDF from the page content
-    await page.pdf({ path: 'resume.pdf' });
+    await page.pdf({ path: 'myTeam.pdf' });
 
     console.log('done');
     await browser.close();
