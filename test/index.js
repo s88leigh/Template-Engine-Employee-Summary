@@ -62,7 +62,6 @@ async function init() {
     }, 0)
 
     const data = {
-      color: answers.color,
       stars,
       ...github.data
     }
