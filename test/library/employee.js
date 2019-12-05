@@ -1,11 +1,10 @@
-class Engineer {
-    constructor(name, id, role, email, gitHub) {
-        this.name = name;
-        this.id = id;
-        this.role = role;
-        this.email = email;
-        this.gitHub = gitHub;
+class Employee {
+    constructor(manager,engineer, intern) {
+        this.manager = manager;
+        this.engineer = engineer;
+        this.intern = intern;
     }
 }
 
-module.exports = Engineer
+
+module.exports = Employee

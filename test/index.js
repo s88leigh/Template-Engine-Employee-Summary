@@ -15,16 +15,19 @@ const puppeteer = require('puppeteer');
 const questions = [
   {
     type: "list",
+    name: "name",
     message: "Choose a manager.",
     choices: ["Alice", "George", "Melissa", "Sam", "Paul"]
   },
   {
     type: "list",
+    name: "name",
     message: "Choose an engineer",
     choices: ["Tim", "Jan", "Kelly", "Christina", "Jack"]
   },
   {
     type: "list",
+    name: "name",
     message: "Choose an intern",  
     choices: ["Kathy", "Greg", "Lisa", "Jim"]
   }
