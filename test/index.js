@@ -1,44 +1,33 @@
 const fs = require("fs");
-const open = require("open");
 const inquirer = require("inquirer");
-const axios = require("axios");
+const jest = require("jest");
+
 const generateHTML = require("./generateHTML");
 const path = require("path");
 const puppeteer = require('puppeteer');
-const util = require("util");
-const writeFileAsync = util.promisify(fs.writeFile);
-const employee = require("./Employee.test");
-const engineer = require("./Engineer.test");
-const intern = require("./Intern.test");
-const manager = require("./Manager.test");
+// const employee = require("./Employee.test");
+// const engineer = require("./Engineer.test");
+// const intern = require("./Intern.test");
+// const manager = require("./Manager.test");
 
 
 
 const questions = [
   {
-    type: "input",
-    name: "name",
-    message: "What is your name?"
+    type: "list",
+    message: "Choose a manager.",
+    choices: ["Alice", "George", "Melissa", "Sam", "Paul"]
   },
   {
     type: "list",
-    name: "job title",
-    message: "What is your current role in this company?",
-    choices: ["manager", "engineer", "intern"]
-  },
-  {
-    type: "input",
-    name: "name",
-    message: "If you have a Github account, Enter your Github username?"
+    message: "Choose an engineer",
+    choices: ["Tim", "Jan", "Kelly", "Christina", "Jack"]
   },
   {
     type: "list",
-    name: "school",
-    message: "Which school did you attend?",  
-    choices: ["UCLA", "Boston U", "UNH"]
-  },
-
-  
+    message: "Choose an intern",  
+    choices: ["Kathy", "Greg", "Lisa", "Jim"]
+  }
 ];
 
 const compile = async function (filename, data) {
@@ -53,18 +42,6 @@ async function init() {
     console.log(answers)
     if (!answers) { throw "No answers provided!" };
 
-    const github = await axios.get(`https://api.github.com/users/${answers.name}`);
-    const githubRepos = await axios.get(`https://api.github.com/users/${answers.name}/repos`)
-
-    const stars = githubRepos.data.reduce((total, current) => {
-      total += current.stargazers_count
-      return total
-    }, 0)
-
-    const data = {
-      stars,
-      ...github.data
-    }
     const HTML = generateHTML(data)
 
     fs.writeFile("index.html", HTML, err => console.log(err));
