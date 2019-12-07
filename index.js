@@ -54,40 +54,5 @@ const compile = async function(templateName, data ) {
 //     message: "Choose an intern for your team",  
 //     choices: ["Kathy", "Greg", "Lisa", "Jim"]
 //   }
-// ];
-
-// const compile = async function (filename, data) {
-//   const filePath = path.join(process.cwd(), "myTeam.pdf");
-//   const html = await fs.readFile(filePath, 'utf-8');
-// };
-
-// async function init() {
-
-//   try {
-//     const answers = await inquirer.prompt(questions);
-//     console.log(answers)
-//     if (!answers) { throw "No answers provided!" };
-
-//     const HTML = generateHTML(employees)
-
-//     fs.writeFile("index.html", HTML, err => console.log(err));
-
-
-//     const browser = await puppeteer.launch();
-//     const page = await browser.newPage();
-//     await page.setContent(HTML);
-//     // await page.emulateMedia("screen");
-
-//     // Generates a PDF from the page content
-//     await page.pdf({ path: 'myTeam.pdf' });
-
-//     console.log('done');
-//     await browser.close();
-//     process.exit();
-//   } catch (error) {
-//     console.log(error)
-//   }
-
-// }
 
 // init();
