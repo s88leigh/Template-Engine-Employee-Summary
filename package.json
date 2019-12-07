@@ -9,6 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
+    "handlebars": "^4.5.3",
     "inquirer": "^7.0.0",
     "jest": "^24.9.0",
     "open": "^7.0.0",
@@ -17,5 +18,16 @@
     "util": "^0.12.1"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "1. The application will prompt the user for information about the team manager and team members.",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s88leigh/Template-Engine-Employee-Summary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/s88leigh/Template-Engine-Employee-Summary/issues"
+  },
+  "homepage": "https://github.com/s88leigh/Template-Engine-Employee-Summary#readme"
 }
