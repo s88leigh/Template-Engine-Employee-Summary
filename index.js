@@ -1,105 +1,133 @@
-const fs = require("fs");
-const jest =require("jest");
-const util = require("util");
-//const puppeteer = require('puppeteer');
-const path =require("path");
 const inquirer = require("inquirer");
-const generateHTML = require('./generateHTML.js');
-// const employees = require('./library/employees.js');
-// const manager = require("./library/manager.js");
-// const engineer = require("./library/engineer.js");
-// const intern = require("./library/intern.js");
+const fs = require("fs");
+const util = require("util");
+const generateHTML = require("./generateHTML")
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const teamData = []
 
-function promptUser() { 
+function promptUser() {
   return inquirer.prompt([
-   
       {
-        type: "input",
-        name: "name",
-        message: "Please enter a manager's name."
+          type: "input",
+          name: "nameManager",
+          message: "Enter name of Manager: "
       },
       {
-        type: "input",
-        name: "id",
-        message: "What is the manager's id?"
+          type: "input",
+          name: "idManager",
+          message: "Enter ID of manager: "
       },
       {
-        type: "input",
-        name: "email",
-        message: "What is the manager's email?"
+          type: "input",
+          name: "emailManager",
+          message: "Enter email of manager: "
       },
       {
-        type: "input",
-        name: "officeNumber",
-        message: "What is the manager's office number?"
-      }
-    ]);
+          type: "input",
+          name: "officeManager",
+          message: "Enter office number of manager: "
+      },
+      {
+          type: "input",
+          name: "nameEngineer1",
+          message: "Enter name of engineer number 1: "
+      },
+      {
+          type: "input",
+          name: "idEngineer1",
+          message: "Enter ID of engineer number 1: "
+      },
+      {
+          type: "input",
+          name: "emailEngineer1",
+          message: "Enter email of engineer number 1: "
+      },
+      {
+          type: "input",
+          name: "githubEngineer1",
+          message: "Enter GitHub Username of engineer number 1: "
+      },
+      {
+          type: "input",
+          name: "nameEngineer2",
+          message: "Enter name of engineer number 2: "
+      },
+      {
+          type: "input",
+          name: "idEngineer2",
+          message: "Enter ID of engineer number 2: "
+      },
+      {
+          type: "input",
+          name: "emailEngineer2",
+          message: "Enter email of engineer number 2: "
+      },
+      {
+          type: "input",
+          name: "githubEngineer2",
+          message: "Enter GitHub Username of engineer number 2: "
+      },
 
-    function promptEngineer() {
-      return inquirer.prompt([
-    
       {
-        type: "input",
-        name: "name",
-        message: "Please enter the name of your Engineer."
+          type: "input",
+          name: "nameEngineer3",
+          message: "Enter name of engineer number 3: "
       },
       {
-        type: "input",
-        name: "id",
-        message: "What is the Engineer's id?"
+          type: "input",
+          name: "idEngineer3",
+          message: "Enter ID of engineer number 3: "
       },
       {
-        type: "input",
-        name: "email",
-        message: "What is the Engineer's email?"
+          type: "input",
+          name: "emailEngineer3",
+          message: "Enter email of engineer number 3: "
       },
       {
-        type: "input",
-        name: "github",
-        message: "What is the Engineer's github username?"
-      }
-    ]);
- 
-
-    function promptIntern() {
-      return inquirer.prompt([
-    
-      {
-        type: "input",
-        name: "name",
-        message: "Please enter the name of the Intern."
+          type: "input",
+          name: "githubEngineer3",
+          message: "Enter GitHub Username of engineer number 3: "
       },
-      {
-        type: "input",
-        name: "id",
-        message: "What is the Intern's id?"
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "What is the Intern's email?"
-      }
       
-    ]);
 
+      {
+          type: "input",
+          name: "nameIntern",
+          message: "Enter name of Intern: "
+      },
+      {
+          type: "input",
+          name: "idIntern",
+          message: "Enter ID of Intern: "
+      },
+      {
+          type: "input",
+          name: "emailIntern",
+          message: "Enter email of Intern:"
+      },
+      {
+          type: "input",
+          name: "linkedinIntern",
+          message: "Enter linkedin account of intern: "
+      },
+     
+  ]);
+}
 
 
 async function init() {
   console.log("hi")
   try {
-    const answers = await promptUser();
+      const answers = await promptUser();
 
-    const html = generateHTML(answers);
+      const html = generateHTML(answers);
 
-    await writeFileAsync("index.html", html);
+      await writeFileAsync("index.html", html);
 
-    console.log("Successfully wrote to index.html");
-  } catch(err) {
-    console.log(err);
+      console.log("Successfully wrote to index.html");
+  } catch (err) {
+      console.log(err);
   }
 }
 
