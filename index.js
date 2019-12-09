@@ -1,58 +1,106 @@
-const fs = require('fs');
-const puppeteer = require('puppeteer');
-const hbs = require('handlebars');
-const path =require('path');
-//const data = require('./database.json');
+const fs = require("fs");
+const jest =require("jest");
+const util = require("util");
+//const puppeteer = require('puppeteer');
+const path =require("path");
+const inquirer = require("inquirer");
+const generateHTML = require('./generateHTML.js');
+// const employees = require('./library/employees.js');
+// const manager = require("./library/manager.js");
+// const engineer = require("./library/engineer.js");
+// const intern = require("./library/intern.js");
 
-const compile = async function(templateName, data ) {
-  const filePath = path.join(process.cwd(), 'templates', `${templateName}.hbs`);
-  const html = await fs.readFile(filePath, 'utf-8');
-  return hbs.compile(html)(data);
-};
+const writeFileAsync = util.promisify(fs.writeFile);
 
-(async function() {
+const teamData = []
+
+function promptUser() { 
+  return inquirer.prompt([
+   
+      {
+        type: "input",
+        name: "name",
+        message: "Please enter a manager's name."
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the manager's id?"
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the manager's email?"
+      },
+      {
+        type: "input",
+        name: "officeNumber",
+        message: "What is the manager's office number?"
+      }
+    ]);
+
+    function promptEngineer() {
+      return inquirer.prompt([
+    
+      {
+        type: "input",
+        name: "name",
+        message: "Please enter the name of your Engineer."
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the Engineer's id?"
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the Engineer's email?"
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is the Engineer's github username?"
+      }
+    ]);
+ 
+
+    function promptIntern() {
+      return inquirer.prompt([
+    
+      {
+        type: "input",
+        name: "name",
+        message: "Please enter the name of the Intern."
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the Intern's id?"
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the Intern's email?"
+      }
+      
+    ]);
+
+
+
+async function init() {
+  console.log("hi")
   try {
+    const answers = await promptUser();
 
-      const browser = await puppeteer.launch();
-      const page = await browser.newPage();
+    const html = generateHTML(answers);
 
-      const content = await compile('teamRoster', data);
+    await writeFileAsync("index.html", html);
 
-      await page.setContent(content);
-      await page.emulateMedia('screen');
-      await page.pdf({
-        path: 'myTeam.pdf'
-
-      })
-
-      console.log('done');
-      await browser.close();
-      process.exit();
-
-  } catch (error) {
-    console.log ('our error', error);
+    console.log("Successfully wrote to index.html");
+  } catch(err) {
+    console.log(err);
   }
-})();
+}
 
-
-// const questions = [
-//   {
-//     type: "list",
-//     name: "name",
-//     message: "Choose a manager for your team.",
-//     choices: ["Alice", "George", "Melissa", "Sam", "Paul"]
-//   },
-//   {
-//     type: "list",
-//     name: "name",
-//     message: "Choose an engineer",
-//     choices: ["Tim", "Jan", "Kelly", "Christina", "Jack"]
-//   },
-//   {
-//     type: "list",
-//     name: "name",
-//     message: "Choose an intern for your team",  
-//     choices: ["Kathy", "Greg", "Lisa", "Jim"]
-//   }
-
-// init();
+init();

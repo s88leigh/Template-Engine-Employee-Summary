@@ -1,6 +1,6 @@
-function generateHTML(employee) {
-    console.log(employee)
-    return `< !DOCTYPE html>
+function generateHTML(answers) {
+    console.log(answers)
+    return `<!DOCTYPE html>
         <html lang="en">
     
         <head>
@@ -55,15 +55,15 @@ function generateHTML(employee) {
                             <div class="col mb-4">
                                 <div class="card border-dark mb-4" style="width: 19rem;">
                                     <div class="card-header">
-                                        <h5>${data.name ? data.name : ""}</h5>
+                                        <h5>${answers.nameManager}</h5>
                                         <h5><i class="fas fa-mug-hot"></i>Manager</h5>
                                     </div>
                                     <div class="card-body text-dark">
                                         <div class="card" style="width: 16rem;">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                                <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                                <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
+                                                <li class="list-group-item"><strong>"ID: "</strong>${answers.idManager ?answers.idManager : " "}</li>
+                                                <li class="list-group-item">Email:${answers.emailManager ? answers.emailManager : " "}</li>
+                                                <li class="list-group-item">Office:${answers.officeManager? answers.officeManager : " "}
                                                 </li>
                                             </ul>
                                         </div>
@@ -74,16 +74,15 @@ function generateHTML(employee) {
                             <div class="col mb-4">
                                 <div class="card border-dark mb-4" style="width: 19rem;">
                                     <div class="card-header">
-                                        <h5>${data.name ? data.name : ""}</h5>
+                                        <h5>${answers.nameEngineer1}</h5>
                                         <h5><i class="fas fa-glasses"></i>Engineer</h5>
                                     </div>
                                     <div class="card-body text-dark">
                                         <div class="card" style="width: 16rem;">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                                <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                                <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
-                                                </li>
+                                                <li class="list-group-item"><strong>"ID: "</strong>${answers.idEngineer1}</li>
+                                                <li class="list-group-item">Email:${answers.emailEngineer1}</li>
+                                                <li class="list-group-item">Github:${answers.githubEngineer1}</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -93,16 +92,15 @@ function generateHTML(employee) {
                             <div class="col mb-4">
                                 <div class="card border-dark mb-4" style="width: 19rem;">
                                     <div class="card-header">
-                                        <h5>${data.name ? data.name : ""}</h5>
+                                        <h5>${answers.nameEngineer2}</h5>
                                         <h5><i class="fas fa-glasses"></i>Engineer</h5>
                                     </div>
                                     <div class="card-body text-dark">
                                         <div class="card" style="width: 16rem;">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                                <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                                <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
-                                                </li>
+                                                <li class="list-group-item"><strong>"ID: "</strong>${answers.idEngineer2}</li>
+                                                <li class="list-group-item">Email:${answers.emailEngineer2}</li>
+                                                <li class="list-group-item">Github:${answers.githubEngineer2}</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -112,16 +110,15 @@ function generateHTML(employee) {
                             <div class="col mb-4">
                                 <div class="card border-dark mb-4" style="width: 19rem;">
                                     <div class="card-header">
-                                        <h5>${data.name ? data.name : ""}</h5>
+                                        <h5>${answers.nameEngineer3}</h5>
                                         <h5><i class="fas fa-glasses"></i>Engineer</h5>
                                     </div>
                                     <div class="card-body text-dark">
                                         <div class="card" style="width: 16rem;">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                                <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                                <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
-                                                </li>
+                                                <li class="list-group-item"><strong>"ID: "</strong>${answers.idEngineer3}</li>
+                                                <li class="list-group-item">Email:${answers.emailEngineer3}</li>
+                                                <li class="list-group-item">Github:${answers.githubEngineer3}</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -131,15 +128,15 @@ function generateHTML(employee) {
                             <div class="col mb-4">
                                 <div class="card border-dark mb-4" style="width: 19rem;">
                                     <div class="card-header">
-                                        <h5>${data.name ? data.name : ""}</h5>
+                                        <h5>${answers.nameIntern}</h5>
                                         <h5><i class="fas fa-user-graduate"></i>Intern</h5>
                                     </div>
                                     <div class="card-body text-dark">
                                         <div class="card" style="width: 16rem;">
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">${data.id ? data.id : ""}</li>
-                                                <li class="list-group-item">${data.Email ? data.Email : ""}</li>
-                                                <li class="list-group-item">${data.Office_number ? data.Office_number : ""}
+                                                <li class="list-group-item"><strong>"ID: "</strong>${answers.idIntern}</li>
+                                                <li class="list-group-item"><strong>"Email: "</strong>${answers.emailIntern}</li>
+                                                <li class="list-group-item"><strong>"Lindkedin: "</strong>${answers.linkedinIntern}
                                                 </li>
                                             </ul>
                                         </div>
@@ -162,8 +159,8 @@ function generateHTML(employee) {
                 crossorigin="anonymous"></script>
         </body>
     
-        </html>`
-    
-        }
+        </html>`;
+}
+
     
         module.exports = generateHTML
